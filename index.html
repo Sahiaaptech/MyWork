@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <script src="JS/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="row" id="r"></div>
+    </div>
+
+        <div class="modal fade" id="m" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                 
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                <img id="img" width="300" height="300"> 
+                  <h1 id="name"></h1>
+                  <p id="price"></p>
+                  <p id="cat"></p>
+                  <p id="spc"></p>
+                
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                  <button type="button" class="btn btn-primary">Save changes</button>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+    <script src="JS/data.js"></script>
+    <script>
+    for(var i =1; i<Products.length;i++ )
+    {
+        document.getElementById("r").innerHTML += `
+    <div class="col-sm-6 col-md-4 col-lg-3">
+    <div class="card" style="width: 18rem;">
+  <img src="${Products[i].Image}" class="card-img-top" >
+  <div class="card-body">
+    <h5 class="card-title">${Products[i].Name}</h5>
+    <p class="card-text">${Products[i].Price}</p>
+    <p class="card-text">${Products[i].Category}</p>
+    <a href="#" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#m" onclick='mymodal("${Products[i].Image}","${Products[i].Name}","${Products[i].Price}","${Products[i].Category}","${Products[i].Specification}")'>See Details</a>
+  </div>
+</div>
+   </div>      `
+    }
+function mymodal(img,name,price,cat,spc)
+{
+    document.getElementById("img").src = img;
+    document.getElementById("name").innerHTML = name;
+    document.getElementById("price").innerHTML = price;
+    document.getElementById("cat").innerHTML = cat;
+    document.getElementById("spc").innerHTML = spc;
+}
+    </script>
+</body>
+</html>

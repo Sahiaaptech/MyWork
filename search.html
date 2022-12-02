@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="CSS/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <script src="JS/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <input type="text" placeholder="search here" id="srch" style="display: none;">
+    <i class="fa-solid fa-magnifying-glass" id="show"></i>
+    <button class="btn-close" style="display: none;"></button>
+    <script src="https://code.jquery.com/jquery-3.6.1.js" integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI=" crossorigin="anonymous"></script>
+    <script>
+            $(document).ready(function(){    
+                $("#show").click(function(){
+                  $("#srch").toggle();
+                  $(".btn-close").show();
+                  $(this).hide();
+                });
+                $(".btn-close").click(function(){
+                    $("#srch").hide();
+                    $("#show").show();
+                    $(this).hide();
+                })
+            });
+    </script>
+</body>
+</html>
