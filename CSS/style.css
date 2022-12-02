@@ -1,6 +1,8 @@
 body
 {
     overflow: hidden;
+    background-color: red;
+    border:1px solid black;
 }
 #catalog
 {
